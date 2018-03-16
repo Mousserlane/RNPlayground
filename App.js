@@ -11,48 +11,40 @@ import {
   Text,
   View
 } from 'react-native';
+import { Provider, connect } from 'react-redux';
+import { addNavigationHelpers } from 'react-navigation';
+import { createReduxBoundAddListener } from 'react-navigation-redux-helpers';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import store from './src/code/redux/store';
+import WelcomeScreen from './src/code/screens/WelcomeScreen/WelcomeScreen';
+import Navigator from './src/code/routeConfig/routeConfig';
 
-type Props = {};
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-      </View>
-    );
+const addListener = createReduxBoundAddListener("root");
+
+const App = ({ dispatch, nav }) => {
+  return (
+    <Navigator 
+      navigation={addNavigationHelpers({
+        dispatch,
+        state: nav,
+        addListener
+      })}
+    />
+  )
+}
+
+const mapStateToProps = (state) => {
+  return {
+    nav: state.nav
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+const AppWithNavigation = connect(mapStateToProps)(App);
+
+export default () => {
+  return (
+    <Provider store={store}>
+      <AppWithNavigation />
+    </Provider>
+  )
+}
