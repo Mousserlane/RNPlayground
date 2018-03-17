@@ -35,6 +35,10 @@ class WelcomeScreen extends Component {
       }).start();
     }
 
+    _onButtonClick = () => {
+      this.props.navigation.navigate('Home');
+    }
+
     render() {
       return (
         <LinearGradient
@@ -54,7 +58,7 @@ class WelcomeScreen extends Component {
               Welcome To The Playground
             </Text>
             <View style={{ alignItems: 'center' }}>
-            <Button transparent bordered rounded light>
+            <Button transparent bordered rounded light onPress={this._onButtonClick}>
               <Text>Click Here To Get Started</Text>
             </Button>
             </View>

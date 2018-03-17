@@ -3,7 +3,7 @@ import { Container, Text } from 'native-base';
 
 import { mainAppStyles } from '../../styles';
 
-class SecondScreen extends Component {
+class ProfileScreen extends Component {
     // constructor() {
     //   super();
     // }
@@ -11,10 +11,10 @@ class SecondScreen extends Component {
     render() {
       return (
         <Container style={mainAppStyles.container}>
-            <Text> This is the Second Screen</Text>
+            <Text> This is the Profile Screen</Text>
         </Container>
       )
     }
 }
 
-export default SecondScreen;
+export default ProfileScreen;
