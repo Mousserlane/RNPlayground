@@ -2,6 +2,7 @@ import { TabNavigator, TabBarBottom, StackNavigator } from 'react-navigation';
 import WelcomeScreen from '../screens/WelcomeScreen/WelcomeScreen';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen/ProfileScreen';
+import ARHomeScreen from '../screens/HomeScreen/ARHomeScreen';
 
 import { Image } from 'react-native';
 
@@ -50,14 +51,32 @@ const HomeStack = TabNavigator(
         tabBarPosition: 'bottom',
         tabBarComponent: TabBarBottom,
         swipeEnabled: false,
-        animationEnabled: false
+        animationEnabled: true
     }
 )
 
+const ARStack = StackNavigator(
+    {
+        ARHome: { 
+            screen: ARHomeScreen,
+            navigationOptions: {
+                title: 'Augmented Reality'
+            }
+        },
+        // ARScreen: {
+        //     screen: 
+        // }
+    },
+    {
+        mode: 'card',
+        headerMode: 'none'
+    }
+)
 export default StackNavigator(
     {
         Welcome: { screen: WelcomeStack },
-        Home: { screen: HomeStack }
+        Home: { screen: HomeStack },
+        ARHome: { screen: ARStack }
     },
     {
         mode: 'modal',

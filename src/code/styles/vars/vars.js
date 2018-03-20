@@ -6,7 +6,9 @@ const brandColor = {
     nimveloPrimary: '#314755',
     nimveloSecondary: '#26a0da',
     miragePrimary : '#16222A',
-    mirageSecondary: '#3A6073'
+    mirageSecondary: '#3A6073',
+    melonPrimary: '#C5E1A5',
+    melonSecondary: '#FFF8E1'
 }
 
 const fontSize = {
