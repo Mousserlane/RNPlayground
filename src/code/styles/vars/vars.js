@@ -8,7 +8,11 @@ const brandColor = {
     miragePrimary : '#16222A',
     mirageSecondary: '#3A6073',
     melonPrimary: '#C5E1A5',
-    melonSecondary: '#FFF8E1'
+    melonSecondary: '#FFF8E1',
+    quepalPrimary: '#11998e',
+    quepalSecondary: '#11998e',
+    expressoPrimary: '#ad5389',
+    expressoSecondary: '#3c1053'
 }
 
 const fontSize = {

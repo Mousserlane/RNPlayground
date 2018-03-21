@@ -42,7 +42,6 @@ class HomeScreen extends Component {
               <Text style={{ fontSize: fontSize.H3, fontWeight: 'bold' }}>
                 Play with something
               </Text>
-              <Text>hehehe</Text>
             </View>
 
             <View style={{ flex: 1, margin : 15 }}>

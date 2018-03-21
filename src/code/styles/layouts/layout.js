@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
 const mainAppStyles = StyleSheet.create({
     container: {
@@ -19,6 +19,12 @@ const mainAppStyles = StyleSheet.create({
     },
   });
 
+const imgResponsive = { 
+  width: '100%',
+  height: Dimensions.get('window').width / 3
+}
+
 export {
-    mainAppStyles
+    mainAppStyles,
+    imgResponsive
 }
